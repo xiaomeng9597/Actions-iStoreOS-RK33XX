@@ -7,8 +7,6 @@
 # Blog: https://p3terx.com
 #===============================================
 
-# 移植RK3399 R08
-
 
 #修改uhttpd配置文件，启用nginx
 # sed -i "/.*uhttpd.*/d" .config
@@ -22,6 +20,8 @@ cp -a $GITHUB_WORKSPACE/configfiles/etc/* package/base-files/files/etc/
 
 
 
+
+# 移植RK3399 R08
 
 echo -e "\\ndefine Device/rk3399_r08
   DEVICE_VENDOR := RK3399
