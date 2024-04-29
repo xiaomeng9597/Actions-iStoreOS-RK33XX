@@ -1,0 +1,17 @@
+CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_friendlyarm_nanopi-r2s=y
+CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_friendlyarm_nanopi-r4s=y
+CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_friendlyarm_nanopi-r4se=y
+CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_rk3399_r08=y
+
+
+CONFIG_PACKAGE_nginx=y
+CONFIG_PACKAGE_nginx-ssl=y
+CONFIG_PACKAGE_nginx-ssl-util=y
+CONFIG_PACKAGE_nginx-util=y
+CONFIG_PACKAGE_nginx-mod-luci=y
+CONFIG_PACKAGE_luci-nginx=y
+
+CONFIG_PACKAGE_ntpdate=y
+CONFIG_PACKAGE_hdparm=y
+CONFIG_PACKAGE_stress=y
+CONFIG_PACKAGE_coreutils-nohup=y
