@@ -34,7 +34,7 @@ jobs:
           - istoreos-22.03
           # - istoreos-23.05
         ARCHITECTURE:
-          - rk35xx
+          - rk33xx
         os:
           - ubuntu-22.04
 
