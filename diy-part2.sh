@@ -37,6 +37,8 @@ cp -f $GITHUB_WORKSPACE/configfiles/Makefile package/boot/uboot-rockchip/Makefil
 
 
 
+
+# 创建rk3399 dts设备树文件夹
 mkdir -p target/linux/rockchip/dts/rk3399
 
 cp -f $GITHUB_WORKSPACE/configfiles/rk3399.dtsi target/linux/rockchip/dts/rk3399/rk3399.dtsi
