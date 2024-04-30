@@ -48,4 +48,8 @@ cp -f $GITHUB_WORKSPACE/configfiles/Makefile package/boot/uboot-rockchip/Makefil
 sed -i "s/armsom,p2pro)/armsom,p2pro|\\\\\n	rk3399,r08)/g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
 
 
-cp -f $GITHUB_WORKSPACE/configfiles/0990-add-board-r08-dts.patch package/boot/uboot-rockchip/patches/0990-add-board-r08-dts.patch
+#cp -f $GITHUB_WORKSPACE/configfiles/0990-add-board-r08-dts.patch package/boot/uboot-rockchip/patches/0990-add-board-r08-dts.patch
+
+
+sed -i "s/.*PKG_HASH:=.*/PKG_HASH:=fb3c470254c4d5260fab9b4d5a6d11cabf65e5166bce4d29da446fe158af8eb2/g" package/boot/uboot-rockchip/Makefile
+cp -f $GITHUB_WORKSPACE/configfiles/u-boot.mk include/u-boot.mk
