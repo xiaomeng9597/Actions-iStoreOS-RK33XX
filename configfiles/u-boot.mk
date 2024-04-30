@@ -3,7 +3,8 @@ PKG_NAME ?= u-boot
 ifndef PKG_SOURCE_PROTO
 PKG_SOURCE = $(PKG_NAME)-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_URL = \
-	https://xiaomeng9597.github.io/files
+	https://xiaomeng9597.github.io/files \
+	https://raw.githubusercontent.com/xiaomeng9597/files/main
 endif
 
 PKG_BUILD_DIR = $(BUILD_DIR)/$(PKG_NAME)-$(BUILD_VARIANT)/$(PKG_NAME)-$(PKG_VERSION)
