@@ -29,7 +29,7 @@ echo -e "\\ndefine Device/rk3399_r08
   SOC := rk3399
   SUPPORTED_DEVICES := rk3399,r08
   DEVICE_DTS := rk3399-r08
-  UBOOT_DEVICE_NAME := nanopi-r4s-rk3399
+  UBOOT_DEVICE_NAME := r08-rk3399
   IMAGE/sysupgrade.img.gz := boot-common | boot-script | pine64-img | gzip | append-metadata
 endef
 TARGET_DEVICES += rk3399_r08" >> target/linux/rockchip/image/armv8.mk
@@ -43,27 +43,10 @@ TARGET_DEVICES += rk3399_r08" >> target/linux/rockchip/image/armv8.mk
 cp -f $GITHUB_WORKSPACE/configfiles/Makefile package/boot/uboot-rockchip/Makefile
 
 
-cp -f $GITHUB_WORKSPACE/configfiles/r08-rk3399_defconfig package/boot/uboot-rockchip/src/configs/r08-rk3399_defconfig
+# cp -f $GITHUB_WORKSPACE/configfiles/r08-rk3399_defconfig package/boot/uboot-rockchip/src/configs/r08-rk3399_defconfig
 
 
 sed -i "s/armsom,p2pro)/armsom,p2pro|\\\\\n	rk3399,r08)/g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
 
 
-
-
-# 创建rk3399 dts设备树文件夹
-mkdir -p target/linux/rockchip/dts/rk3399
-
-cp -f $GITHUB_WORKSPACE/configfiles/rk3399.dtsi target/linux/rockchip/dts/rk3399/rk3399.dtsi
-cp -f $GITHUB_WORKSPACE/configfiles/rk3399-opp.dtsi target/linux/rockchip/dts/rk3399/rk3399-opp.dtsi
-cp -f $GITHUB_WORKSPACE/configfiles/rk3399-r08.dts target/linux/rockchip/dts/rk3399/rk3399-r08.dts
-
-
-cp -f $GITHUB_WORKSPACE/configfiles/rk3399.dtsi target/linux/rockchip/armv8/files/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-cp -f $GITHUB_WORKSPACE/configfiles/rk3399-opp.dtsi target/linux/rockchip/armv8/files/arch/arm64/boot/dts/rockchip/rk3399-opp.dtsi
-cp -f $GITHUB_WORKSPACE/configfiles/rk3399-r08.dts target/linux/rockchip/armv8/files/arch/arm64/boot/dts/rockchip/rk3399-r08.dts
-
-
-cp -f $GITHUB_WORKSPACE/configfiles/rk3399.dtsi package/boot/uboot-rockchip/src/arch/arm/dts/rk3399.dtsi
-cp -f $GITHUB_WORKSPACE/configfiles/rk3399-opp.dtsi package/boot/uboot-rockchip/src/arch/arm/dts/rk3399-opp.dtsi
-cp -f $GITHUB_WORKSPACE/configfiles/rk3399-r08.dts package/boot/uboot-rockchip/src/arch/arm/dts/rk3399-r08.dts
+cp -f $GITHUB_WORKSPACE/configfiles/0990-add-board-r08-dts.patch package/boot/uboot-rockchip/patches/0990-add-board-r08-dts.patch
