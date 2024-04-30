@@ -252,7 +252,7 @@
 		compatible = "rockchip,rk3399-dmc";
 		rockchip,pmu = <&pmugrf>;
 		devfreq-events = <&dfi>;
-		clocks = <&cru SCLK_DDRC>;
+		clocks = <&cru SCLK_DDRCLK>;
 		clock-names = "dmc_clk";
 		status = "disabled";
 	};
