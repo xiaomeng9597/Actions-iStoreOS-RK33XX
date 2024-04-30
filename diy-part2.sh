@@ -29,7 +29,7 @@ echo -e "\\ndefine Device/rk3399_r08
   SOC := rk3399
   SUPPORTED_DEVICES := rk3399,r08
   DEVICE_DTS := rk3399-r08
-  UBOOT_DEVICE_NAME := r08-rk3399
+  UBOOT_DEVICE_NAME := nanopi-r4s-rk3399
   IMAGE/sysupgrade.img.gz := boot-common | boot-script | pine64-img | gzip | append-metadata
 endef
 TARGET_DEVICES += rk3399_r08" >> target/linux/rockchip/image/armv8.mk
