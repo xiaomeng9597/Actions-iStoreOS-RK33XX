@@ -51,5 +51,5 @@ sed -i "s/armsom,p2pro)/armsom,p2pro|\\\\\n	rk3399,r08)/g" target/linux/rockchip
 #cp -f $GITHUB_WORKSPACE/configfiles/0990-add-board-r08-dts.patch package/boot/uboot-rockchip/patches/0990-add-board-r08-dts.patch
 
 
-#sed -i "s/.*PKG_HASH:=.*/PKG_HASH:=b5303652997730c5a0f1dae2297cec3282d09bc05d1ea8d0c1fdc4dac5ff501e/g" package/boot/uboot-rockchip/Makefile
+#sed -i "s/.*PKG_HASH:=.*/PKG_HASH:=0b5a1616a78b6fb0a23709510080e227c72675dd942ae84402dc4022bfff1b28/g" package/boot/uboot-rockchip/Makefile
 cp -f $GITHUB_WORKSPACE/configfiles/u-boot.mk include/u-boot.mk
