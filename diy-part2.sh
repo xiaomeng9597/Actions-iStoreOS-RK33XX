@@ -28,7 +28,6 @@ echo -e "\\ndefine Device/rk3399_r08
   DEVICE_MODEL := R08
   SOC := rk3399
   SUPPORTED_DEVICES := rk3399,r08
-  DEVICE_DTS := rk3399-r08
   UBOOT_DEVICE_NAME := r08-rk3399
   IMAGE/sysupgrade.img.gz := boot-common | boot-script | pine64-img | gzip | append-metadata
 endef
