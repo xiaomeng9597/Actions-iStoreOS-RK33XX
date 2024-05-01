@@ -133,7 +133,7 @@ UBOOT_TARGETS := \
   rockpro64-rk3399 \
   nanopi-r2s-rk3328 \
   r08-rk3399 \
-  xiaobao-nas-v1
+  xiaobao-nas-v1-rk3399
 
 UBOOT_CONFIGURE_VARS += USE_PRIVATE_LIBGCC=yes
 
