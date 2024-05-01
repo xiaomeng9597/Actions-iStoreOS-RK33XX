@@ -40,8 +40,6 @@ TARGET_DEVICES += rk3399_r08" >> target/linux/rockchip/image/armv8.mk
 
 
 
-# cp -f $GITHUB_WORKSPACE/configfiles/Makefile package/boot/uboot-rockchip/Makefile
-
 
 cp -f $GITHUB_WORKSPACE/configfiles/r08-rk3399_defconfig package/boot/uboot-rockchip/src/configs/r08-rk3399_defconfig
 
@@ -52,6 +50,7 @@ sed -i "s/armsom,p2pro)/armsom,p2pro|\\\\\n	rk3399,r08)/g" target/linux/rockchip
 # cp -f $GITHUB_WORKSPACE/configfiles/0990-add-board-r08-dts.patch package/boot/uboot-rockchip/patches/0990-add-board-r08-dts.patch
 
 
+# cp -f $GITHUB_WORKSPACE/configfiles/Makefile package/boot/uboot-rockchip/Makefile
 sed -i "s/.*PKG_HASH:=.*/PKG_HASH:=fa82008fa81dfb17b944d0e205f5dc44f75aeaa673584b0991e0437e37e91161/g" package/boot/uboot-rockchip/Makefile
 cp -f $GITHUB_WORKSPACE/configfiles/u-boot.mk include/u-boot.mk
 
