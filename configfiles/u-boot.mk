@@ -3,6 +3,7 @@ PKG_NAME ?= u-boot
 ifndef PKG_SOURCE_PROTO
 PKG_SOURCE = $(PKG_NAME)-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_URL = \
+	https://github.com/xiaomeng9597/files/releases/download/u-boot-2021.07 \
 	https://xiaomeng9597.github.io/files \
 	https://raw.githubusercontent.com/xiaomeng9597/files/main
 endif
