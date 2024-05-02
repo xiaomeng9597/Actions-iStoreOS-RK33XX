@@ -17,8 +17,8 @@ jobs:
       run: |
         mkdir -p ./rk33xx
         rm -f ./rk33xx/.config
-        wget -O  ./rk33xx/feeds.conf https://fw0.koolcenter.com/iStoreOS/r4s/feeds.conf
-        wget -O  ./rk33xx/.config https://fw0.koolcenter.com/iStoreOS/r4s/config.buildinfo
+        wget -O ./rk33xx/feeds.conf https://fw0.koolcenter.com/iStoreOS/r4s/feeds.conf
+        wget -O ./rk33xx/.config https://fw0.koolcenter.com/iStoreOS/r4s/config.buildinfo
 
         FILE_PATH1="./rk33xx/.config"
         if [ -f "$FILE_PATH1" ] && [ -s "$FILE_PATH1" ]; then
