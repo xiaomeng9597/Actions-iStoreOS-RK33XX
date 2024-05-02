@@ -92,7 +92,7 @@ define Device/codinge_xiaobao-nas-v1
   SUPPORTED_DEVICES := codinge,xiaobao-nas-v1
   DEVICE_DTS := rk3399-xiaobao-nas-v1
   UBOOT_DEVICE_NAME := xiaobao-nas-v1-rk3399
-  IMAGE/sysupgrade.img.gz := boot-common | boot-script | pine64-bin | gzip | append-metadata
+  IMAGE/sysupgrade.img.gz := boot-common | boot-script | pine64-img | gzip | append-metadata
   DEVICE_PACKAGES := kmod-ata-ahci
 endef
 TARGET_DEVICES += codinge_xiaobao-nas-v1
