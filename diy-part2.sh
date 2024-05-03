@@ -57,11 +57,13 @@ cp -f $GITHUB_WORKSPACE/configfiles/xiaobao-nas-v1-rk3399_defconfig package/boot
 
 
 # 网口配置
-sed -i "s/friendlyarm,nanopi-r2s|\\\/friendlyarm,nanopi-r2s|\\\\\n	rk3399,r08|\\\/g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
-sed -i "s/rk3399,r08|\\\/rk3399,r08|\\\\\n	codinge,xiaobao-nas-v1|\\\/g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
+cp -f $GITHUB_WORKSPACE/configfiles/02_network target/linux/rockchip/armv8/base-files/etc/board.d/02_network
 
-sed -i "s/friendlyarm,nanopi-r2s)/friendlyarm,nanopi-r2s|\\\\\n	rk3399,r08)/g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
-sed -i "s/rk3399,r08)/rk3399,r08|\\\\\n	codinge,xiaobao-nas-v1)/g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
+#sed -i "s/friendlyarm,nanopi-r2s|\\\/friendlyarm,nanopi-r2s|\\\\\n	rk3399,r08|\\\/g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
+#sed -i "s/rk3399,r08|\\\/rk3399,r08|\\\\\n	codinge,xiaobao-nas-v1|\\\/g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
+
+#sed -i "s/friendlyarm,nanopi-r2s)/friendlyarm,nanopi-r2s|\\\\\n	rk3399,r08)/g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
+#sed -i "s/rk3399,r08)/rk3399,r08|\\\\\n	codinge,xiaobao-nas-v1)/g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
 
 
 
