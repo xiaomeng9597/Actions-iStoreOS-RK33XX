@@ -9,12 +9,12 @@ rockchip_setup_interfaces()
 
 	case "$board" in
 	friendlyarm,nanopi-r2s|\
+	rk3399,r08|\
 	friendlyarm,nanopi-r4s|\
 	friendlyarm,nanopi-r4se)
 		ucidef_set_interfaces_lan_wan 'eth1' 'eth0'
 		;;
-	armsom,p2pro|\
-	rk3399,r08)
+	armsom,p2pro)
 		ucidef_set_interface_lan 'eth0' 'dhcp'
 		;;
 	*)
