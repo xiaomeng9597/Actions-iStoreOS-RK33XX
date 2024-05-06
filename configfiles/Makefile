@@ -122,7 +122,6 @@ define U-Boot/xiaobao-nas-v1-rk3399
   DEPENDS:=+PACKAGE_u-boot-xiaobao-nas-v1-rk3399:arm-trusted-firmware-rockchip
   PKG_BUILD_DEPENDS:=arm-trusted-firmware-rockchip
   ATF:=rk3399_bl31.elf
-  USE_RKBIN:=1
 endef
 
 UBOOT_TARGETS := \
