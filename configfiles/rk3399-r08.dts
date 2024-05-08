@@ -784,12 +784,10 @@
 };
 
 &usbdrd3_0 {
-	extcon = <&u2phy0>;
 	status = "okay";
 };
 
 &usbdrd3_1 {
-	extcon = <&u2phy1>;
 	status = "okay";
 };
 
