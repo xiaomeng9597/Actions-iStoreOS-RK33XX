@@ -697,6 +697,7 @@
 	bus-width = <8>;
 	mmc-hs400-1_8v;
 	mmc-hs400-enhanced-strobe;
+	supports-emmc;
 	non-removable;
 	status = "okay";
 };
