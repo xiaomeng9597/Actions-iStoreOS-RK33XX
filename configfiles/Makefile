@@ -8,7 +8,7 @@ include $(INCLUDE_DIR)/kernel.mk
 PKG_VERSION:=2021.07
 PKG_RELEASE:=$(AUTORELEASE)
 
-PKG_HASH:=c1db8c3f364b8f6219aada8cc8a455a0c514810b8d71045fb91a5609f2025e9a
+PKG_HASH:=f0add82ddedc62176cebb910ef274c1a6d871f08bc73d4d6c18bf46dca81ec54
 
 PKG_MAINTAINER:=Tobias Maedel <openwrt@tbspace.de>
 
