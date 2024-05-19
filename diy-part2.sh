@@ -95,3 +95,10 @@ cp -f $GITHUB_WORKSPACE/configfiles/rk3399.dtsi package/boot/uboot-rockchip/src/
 cp -f $GITHUB_WORKSPACE/configfiles/rk3399-opp.dtsi package/boot/uboot-rockchip/src/arch/arm/dts/rk3399-opp.dtsi
 cp -f $GITHUB_WORKSPACE/configfiles/rk3399-r08.dts package/boot/uboot-rockchip/src/arch/arm/dts/rk3399-r08.dts
 cp -f $GITHUB_WORKSPACE/configfiles/rk3399-xiaobao-nas-v1.dts package/boot/uboot-rockchip/src/arch/arm/dts/rk3399-xiaobao-nas-v1.dts
+
+
+
+#集成CPU性能跑分脚本
+cp -a $GITHUB_WORKSPACE/configfiles/coremark/* package/base-files/files/sbin/
+chmod 755 package/base-files/files/sbin/coremark
+chmod 755 package/base-files/files/sbin/coremark.sh
