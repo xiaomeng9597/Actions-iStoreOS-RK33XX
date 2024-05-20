@@ -760,11 +760,15 @@
 &uart0 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&uart0_xfer &uart0_cts &uart0_rts>;
-	status = "okay";
+	status = "disabled";
+};
+
+&uart1 {
+	status = "disabled";
 };
 
 &uart2 {
-	status = "okay";
+	status = "disabled";
 };
 
 &usb_host0_ehci {
