@@ -69,7 +69,7 @@ sed -i "s/rk3399,r08)/rk3399,r08|\\\\\n	codinge,xiaobao-nas-v1)/g" target/linux/
 
 
 cp -f $GITHUB_WORKSPACE/configfiles/Makefile package/boot/uboot-rockchip/Makefile
-sed -i "s/.*PKG_HASH:=.*/PKG_HASH:=419acea5088ab98ae57a55bb77f636f3c85bc363aedc6fd390c1ba1ac1138a81/g" package/boot/uboot-rockchip/Makefile
+sed -i "s/.*PKG_HASH:=.*/PKG_HASH:=5cb97de15c90002831ed964b817ca56500248a9285b4715680ac7e5e3fe37bed/g" package/boot/uboot-rockchip/Makefile
 cp -f $GITHUB_WORKSPACE/configfiles/u-boot.mk include/u-boot.mk
 
 
