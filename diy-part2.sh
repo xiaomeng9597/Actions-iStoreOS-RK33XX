@@ -8,8 +8,12 @@
 #===============================================
 
 
-#update ubus git HEAD
+# update ubus git HEAD
 cp -f $GITHUB_WORKSPACE/configfiles/ubus_Makefile package/system/ubus/Makefile
+
+
+# 增加一个自定义下载网址
+sed -i "s/push @mirrors, 'https:\/\/mirror2.openwrt.org\/sources';/&\npush @mirrors, 'https:\/\/github.com\/xiaomeng9597\/files\/releases\/download\/linkmount';/g" scripts/download.pl
 
 
 #修改uhttpd配置文件，启用nginx
@@ -61,8 +65,8 @@ cp -f $GITHUB_WORKSPACE/configfiles/xiaobao-nas-v1-rk3399_defconfig package/boot
 
 
 # 网口配置
-sed -i "s/friendlyarm,nanopi-r2s|\\\/friendlyarm,nanopi-r2s|\\\\\n	rk3399,r08|\\\/g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
-sed -i "s/rk3399,r08|\\\/rk3399,r08|\\\\\n	codinge,xiaobao-nas-v1|\\\/g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
+sed -i "s/friendlyarm,nanopi-r2s|\\\/&\\n	rk3399,r08|\\\/g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
+sed -i "s/rk3399,r08|\\\/&\\n	codinge,xiaobao-nas-v1|\\\/g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
 
 sed -i "s/friendlyarm,nanopi-r2s)/friendlyarm,nanopi-r2s|\\\\\n	rk3399,r08)/g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
 sed -i "s/rk3399,r08)/rk3399,r08|\\\\\n	codinge,xiaobao-nas-v1)/g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
