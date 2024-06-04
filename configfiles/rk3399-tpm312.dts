@@ -35,7 +35,7 @@ GPIOs 128-159, platform/pinctrl, gpio4:
 
 / {
 	model = "RK3399 TPM312";
-	compatible = "rockchip,rk3399-w6-lvds","rockchip,rk3399";
+	compatible = "rk3399,tpm312","rockchip,rk3399";
 
 	aliases {
 		ethernet0 = &gmac;
