@@ -19,6 +19,7 @@
 	};
 
 	chosen {
+		bootargs = "earlycon=uart8250,mmio32,0xff1a0000 swiotlb=1";
 		stdout-path = "serial2:1500000n8";
 	};
 
@@ -744,7 +745,7 @@
 };
 
 &uart0 {
-	status = "disabled";
+	status = "okay";
 	pinctrl-names = "default";
 	pinctrl-0 = <&uart0_xfer &uart0_cts &uart0_rts>;
 
@@ -762,12 +763,8 @@
 };
 
 // Debug TTL
-&uart1 {
-	status = "disabled";
-};
-
 &uart2 {
-	status = "disabled";
+	status = "okay";
 };
 
 &usb_host0_ehci {
