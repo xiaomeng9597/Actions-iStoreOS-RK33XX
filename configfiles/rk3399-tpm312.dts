@@ -44,7 +44,6 @@ GPIOs 128-159, platform/pinctrl, gpio4:
 	};
 
 	chosen {
-		bootargs = "earlycon=uart8250,mmio32,0xff1a0000 swiotlb=1";
 		stdout-path = "serial2:1500000n8";
 	};
 
