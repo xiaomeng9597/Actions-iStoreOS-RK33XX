@@ -86,6 +86,9 @@ sed -i "s/friendlyarm,nanopi-r2s)/friendlyarm,nanopi-r2s|\\\\\n	rk3399,r08)/g" t
 sed -i "s/rk3399,r08)/rk3399,r08|\\\\\n	rk3399,tpm312)/g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
 sed -i "s/rk3399,tpm312)/rk3399,tpm312|\\\\\n	codinge,xiaobao-nas-v1)/g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
 
+sed -i "s/friendlyarm,nanopi-r2s)/friendlyarm,nanopi-r2s|\\\\\n	rk3399,r08)/g" target/linux/rockchip/armv8/base-files/lib/board/init.sh
+sed -i "s/rk3399,r08)/rk3399,r08|\\\\\n	rk3399,tpm312)/g" target/linux/rockchip/armv8/base-files/lib/board/init.sh
+
 
 
 # cp -f $GITHUB_WORKSPACE/configfiles/0990-add-board-r08-dts.patch package/boot/uboot-rockchip/patches/0990-add-board-r08-dts.patch
