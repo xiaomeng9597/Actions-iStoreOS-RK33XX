@@ -763,6 +763,10 @@
 };
 
 // Debug TTL
+&uart1 {
+	status = "disabled";
+};
+
 &uart2 {
 	status = "okay";
 };
