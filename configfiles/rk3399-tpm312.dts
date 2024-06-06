@@ -676,8 +676,12 @@ GPIOs 128-159, platform/pinctrl, gpio4:
 
 &uart0 {
 	pinctrl-names = "default";
-	pinctrl-0 = <&uart0_xfer>;
+	pinctrl-0 = <&uart0_xfer &uart0_cts &uart0_rts>;
 	status = "okay";
+};
+
+&uart1 {
+	status = "disabled";
 };
 
 &uart2 {
