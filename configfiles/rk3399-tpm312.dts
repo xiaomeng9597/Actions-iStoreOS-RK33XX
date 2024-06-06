@@ -748,6 +748,7 @@ GPIOs 128-159, platform/pinctrl, gpio4:
 	phy-mode = "rgmii";
 	pinctrl-names = "default";
 	pinctrl-0 = <&rgmii_pins>;
+	pinctrl-1 = <&rgmii_sleep_pins>;
 	snps,reset-gpio = <&gpio3 RK_PB7 GPIO_ACTIVE_LOW>;
 	snps,reset-active-low;
 	snps,reset-delays-us = <0 10000 50000>;
@@ -841,6 +842,11 @@ GPIOs 128-159, platform/pinctrl, gpio4:
 		wifi_pwr_gpio: wifi-pwr-gpio {
 			rockchip,pins = <0 3 RK_FUNC_GPIO &pcfg_pull_none>;
 			};
+	};
+	gmac {
+		rgmii_sleep_pins: rgmii-sleep-pins {
+			rockchip,pins = <3 RK_PB7 RK_FUNC_GPIO &pcfg_output_low>;
+		};
 	};
 };
 
