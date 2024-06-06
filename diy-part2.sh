@@ -29,7 +29,11 @@ cp -a $GITHUB_WORKSPACE/configfiles/etc/* package/base-files/files/etc/
 
 
 
-# 移植RK3399 R08 和 xiaobao-nas-v1
+
+# 移植以下机型
+# RK3399 R08
+# RK3399 TPM312
+# XIAOBAO-NAS-V1
 
 echo -e "\\ndefine Device/rk3399_r08
   DEVICE_VENDOR := RK3399
@@ -77,7 +81,7 @@ cp -f $GITHUB_WORKSPACE/configfiles/xiaobao-nas-v1-rk3399_defconfig package/boot
 
 
 
-# 网口配置
+# 网口配置为旁路由模式，注释下面三个网口模式替换命令后，网口模式会变成主路由模式。
 sed -i "s/armsom,p2pro)/armsom,p2pro|\\\\\n	rk3399,r08)/g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
 sed -i "s/rk3399,r08)/rk3399,r08|\\\\\n	rk3399,tpm312)/g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
 sed -i "s/rk3399,tpm312)/rk3399,tpm312|\\\\\n	codinge,xiaobao-nas-v1)/g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
