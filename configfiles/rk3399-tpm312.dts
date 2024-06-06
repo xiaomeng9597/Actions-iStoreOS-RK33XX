@@ -577,7 +577,6 @@ GPIOs 128-159, platform/pinctrl, gpio4:
 	status = "disabled";
 	max-freq = <48000000>;
 	dev-port = <0>;
-	//pinctrl-0 = <&spi1m2_pins>;
 	num-cs = <1>;
 
 	spi_wk2xxx: spi_wk2xxx@00{
