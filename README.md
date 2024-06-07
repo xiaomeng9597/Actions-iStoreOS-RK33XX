@@ -19,15 +19,15 @@
 
 ### RK33xx 架构
 
-| 设备       | 包名称                                                                    |
-| ---------- | ------------------------------------------------------------------------- |
-| R2S        | istoreos-rockchip-armv8-friendlyarm_nanopi-r2s-squashfs-sysupgrade.img.gz |
-| R4S        | istoreos-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz |
-| R4SE       | istoreos-rockchip-armv8-friendlyarm_nanopi-r4se-squashfs-sysupgrade.img.gz |
-| ROCK-PI-4A | istoreos-rockchip-armv8-radxa_rock-pi-squashfs-sysupgrade.img.gz  |
-| ROCKPRO64  | istoreos-rockchip-armv8-pine64_rockpro64-squashfs-sysupgrade.img.gz  |
-| R08  | istoreos-rockchip-armv8-rk3399_r08-squashfs-sysupgrade.img.gz  |
-| TPM312  | istoreos-rockchip-armv8-rk3399_tpm312-squashfs-sysupgrade.img.gz  |
+| 设备       | 包名称                                                                    | 说明 |
+| ---------- | ------------------------------------------------------------------------- | ------ |
+| R2S        | istoreos-rockchip-armv8-friendlyarm_nanopi-r2s-squashfs-sysupgrade.img.gz | 无 |
+| R4S        | istoreos-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz | 无 |
+| R4SE       | istoreos-rockchip-armv8-friendlyarm_nanopi-r4se-squashfs-sysupgrade.img.gz | 无 |
+| ROCK-PI-4A | istoreos-rockchip-armv8-radxa_rock-pi-squashfs-sysupgrade.img.gz | 无 |
+| ROCKPRO64  | istoreos-rockchip-armv8-pine64_rockpro64-squashfs-sysupgrade.img.gz  | 无 |
+| R08  | istoreos-rockchip-armv8-rk3399_r08-squashfs-sysupgrade.img.gz  | 默认主路由模式 |
+| TPM312  | istoreos-rockchip-armv8-rk3399_tpm312-squashfs-sysupgrade.img.gz  | 默认旁路由模式 |
 
 ### RK35xx 架构
 
