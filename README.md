@@ -27,6 +27,7 @@
 | ROCK-PI-4A | istoreos-rockchip-armv8-radxa_rock-pi-squashfs-sysupgrade.img.gz  |
 | ROCKPRO64  | istoreos-rockchip-armv8-pine64_rockpro64-squashfs-sysupgrade.img.gz  |
 | R08  | istoreos-rockchip-armv8-rk3399_r08-squashfs-sysupgrade.img.gz  |
+| TPM312  | istoreos-rockchip-armv8-rk3399_tpm312-squashfs-sysupgrade.img.gz  |
 
 ### RK35xx 架构
 
