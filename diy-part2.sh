@@ -90,7 +90,7 @@ sed -i "s/rk3399,tpm312)/rk3399,tpm312|\\\\\n	codinge,xiaobao-nas-v1)/g" target/
 
 
 cp -f $GITHUB_WORKSPACE/configfiles/Makefile package/boot/uboot-rockchip/Makefile
-sed -i "s/.*PKG_HASH:=.*/PKG_HASH:=614ad73e3199eb59b61d5d958a76fa15e043a89b41f9bd5d6b8707ce5a5b144d/g" package/boot/uboot-rockchip/Makefile
+sed -i "s/.*PKG_HASH:=.*/PKG_HASH:=d9c1703a8c806b0034a01c48b5987b1957c1a6a2c3812e46d91fe1bd9c078573/g" package/boot/uboot-rockchip/Makefile
 cp -f $GITHUB_WORKSPACE/configfiles/u-boot.mk include/u-boot.mk
 
 
@@ -123,6 +123,8 @@ cp -f $GITHUB_WORKSPACE/configfiles/rk3399-xiaobao-nas-v1.dts package/boot/uboot
 
 
 #开启无线功能
+cp -f $GITHUB_WORKSPACE/configfiles/opwifi package/base-files/files/etc/init.d/opwifi
+chmod 755 package/base-files/files/etc/init.d/opwifi
 sed -i "s/wireless.radio\${devidx}.disabled=1/wireless.radio\${devidx}.disabled=0/g" package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 
