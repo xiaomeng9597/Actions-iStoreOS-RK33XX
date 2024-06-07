@@ -89,7 +89,7 @@ sed -i "s/rk3399,tpm312)/rk3399,tpm312|\\\\\n	codinge,xiaobao-nas-v1)/g" target/
 
 
 
-# 复制和修改u-boot压缩包SHA256校验码，编译失败时注意是不是这个引起的。
+# 复制和修改u-boot压缩包SHA256校验码，编译失败时注意看是不是这个引起的。
 cp -f $GITHUB_WORKSPACE/configfiles/Makefile package/boot/uboot-rockchip/Makefile
 sha256_value=$(wget -qO- "https://github.com/xiaomeng9597/files/releases/download/u-boot-2021.07/u-boot-2021.07.tar.bz2.sha" | awk '{print $1}')
 if [ -n "$sha256_value" ]; then
