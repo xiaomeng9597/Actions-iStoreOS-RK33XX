@@ -641,6 +641,14 @@
 			rockchip,pins = <0 RK_PA6 RK_FUNC_GPIO &pcfg_pull_none>;
 		};
 	};
+
+	uart1 {
+		uart1_xfer: uart1-xfer {
+			rockchip,pins =
+			    <3 RK_PC3 2 &pcfg_pull_up>,
+			    <3 RK_PC4 2 &pcfg_pull_none>;
+		};
+	};
 };
 
 &pwm0 {
@@ -764,6 +772,7 @@
 
 // Debug TTL
 &uart1 {
+	pinctrl-0 = <&uart1_xfer>;
 	status = "disabled";
 };
 
