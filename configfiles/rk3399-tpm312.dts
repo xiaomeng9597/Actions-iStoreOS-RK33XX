@@ -680,6 +680,7 @@ GPIOs 128-159, platform/pinctrl, gpio4:
 };
 
 &uart1 {
+	pinctrl-0 = <&uart1_xfer>;
 	status = "disabled";
 };
 
@@ -845,6 +846,13 @@ GPIOs 128-159, platform/pinctrl, gpio4:
 	gmac {
 		rgmii_sleep_pins: rgmii-sleep-pins {
 			rockchip,pins = <3 RK_PB7 RK_FUNC_GPIO &pcfg_output_low>;
+		};
+	};
+	uart1 {
+		uart1_xfer: uart1-xfer {
+			rockchip,pins =
+			    <3 RK_PC3 2 &pcfg_pull_up>,
+			    <3 RK_PC4 2 &pcfg_pull_none>;
 		};
 	};
 };
