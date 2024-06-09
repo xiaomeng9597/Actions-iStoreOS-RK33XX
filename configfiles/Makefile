@@ -124,16 +124,6 @@ define U-Boot/tpm312-rk3399
   ATF:=rk3399_bl31.elf
 endef
 
-define U-Boot/xiaobao-nas-v1-rk3399
-  BUILD_SUBTARGET:=armv8
-  NAME:=Codinge Xiaobao NAS-I
-  BUILD_DEVICES:= \
-    codinge_xiaobao-nas-v1
-  DEPENDS:=+PACKAGE_u-boot-xiaobao-nas-v1-rk3399:arm-trusted-firmware-rockchip
-  PKG_BUILD_DEPENDS:=arm-trusted-firmware-rockchip
-  ATF:=rk3399_bl31.elf
-endef
-
 UBOOT_TARGETS := \
   evb-rk3308 \
   nanopi-r4s-rk3399 \
@@ -142,8 +132,7 @@ UBOOT_TARGETS := \
   rockpro64-rk3399 \
   nanopi-r2s-rk3328 \
   r08-rk3399 \
-  tpm312-rk3399 \
-  xiaobao-nas-v1-rk3399
+  tpm312-rk3399
 
 UBOOT_CONFIGURE_VARS += USE_PRIVATE_LIBGCC=yes
 
