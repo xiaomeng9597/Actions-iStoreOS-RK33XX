@@ -85,14 +85,13 @@ define Device/rk3399_r08
 endef
 TARGET_DEVICES += rk3399_r08
 
-define Device/codinge_xiaobao-nas-v1
-  DEVICE_VENDOR := Codinge
-  DEVICE_MODEL := XiaoBao NAS-I
+define Device/rk3399_tpm312
+  DEVICE_VENDOR := RK3399
+  DEVICE_MODEL := TPM312
   SOC := rk3399
-  SUPPORTED_DEVICES := codinge,xiaobao-nas-v1
-  DEVICE_DTS := rk3399-xiaobao-nas-v1
-  UBOOT_DEVICE_NAME := xiaobao-nas-v1-rk3399
+  SUPPORTED_DEVICES := rk3399,tpm312
+  DEVICE_DTS := rk3399-tpm312
+  UBOOT_DEVICE_NAME := tpm312-rk3399
   IMAGE/sysupgrade.img.gz := boot-common | boot-script | pine64-img | gzip | append-metadata
-  DEVICE_PACKAGES := kmod-ata-ahci
 endef
-TARGET_DEVICES += codinge_xiaobao-nas-v1
+TARGET_DEVICES += rk3399_tpm312
