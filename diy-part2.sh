@@ -33,7 +33,6 @@ cp -a $GITHUB_WORKSPACE/configfiles/etc/* package/base-files/files/etc/
 # 移植以下机型
 # RK3399 R08
 # RK3399 TPM312
-# XIAOBAO-NAS-V1
 
 echo -e "\\ndefine Device/rk3399_r08
   DEVICE_VENDOR := RK3399
@@ -59,32 +58,17 @@ endef
 TARGET_DEVICES += rk3399_tpm312" >> target/linux/rockchip/image/armv8.mk
 
 
-echo -e "\\ndefine Device/codinge_xiaobao-nas-v1
-  DEVICE_VENDOR := Codinge
-  DEVICE_MODEL := XiaoBao NAS-I
-  SOC := rk3399
-  SUPPORTED_DEVICES := codinge,xiaobao-nas-v1
-  DEVICE_DTS := rk3399-xiaobao-nas-v1
-  UBOOT_DEVICE_NAME := xiaobao-nas-v1-rk3399
-  IMAGE/sysupgrade.img.gz := boot-common | boot-script | pine64-img | gzip | append-metadata
-  DEVICE_PACKAGES := kmod-ata-ahci
-endef
-TARGET_DEVICES += codinge_xiaobao-nas-v1" >> target/linux/rockchip/image/armv8.mk
-
-
 
 
 
 cp -f $GITHUB_WORKSPACE/configfiles/r08-rk3399_defconfig package/boot/uboot-rockchip/src/configs/r08-rk3399_defconfig
 cp -f $GITHUB_WORKSPACE/configfiles/tpm312-rk3399_defconfig package/boot/uboot-rockchip/src/configs/tpm312-rk3399_defconfig
-cp -f $GITHUB_WORKSPACE/configfiles/xiaobao-nas-v1-rk3399_defconfig package/boot/uboot-rockchip/src/configs/xiaobao-nas-v1-rk3399_defconfig
 
 
 
 # 网口配置为旁路由模式，注释下面三个网口模式替换命令后，网口模式会变成主路由模式。
 sed -i "s/armsom,p2pro)/armsom,p2pro|\\\\\n	rk3399,r08)/g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
 sed -i "s/rk3399,r08)/rk3399,r08|\\\\\n	rk3399,tpm312)/g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
-sed -i "s/rk3399,tpm312)/rk3399,tpm312|\\\\\n	codinge,xiaobao-nas-v1)/g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
 
 
 
@@ -108,21 +92,18 @@ cp -f $GITHUB_WORKSPACE/configfiles/rk3399.dtsi target/linux/rockchip/dts/rk3399
 cp -f $GITHUB_WORKSPACE/configfiles/rk3399-opp.dtsi target/linux/rockchip/dts/rk3399/rk3399-opp.dtsi
 cp -f $GITHUB_WORKSPACE/configfiles/rk3399-r08.dts target/linux/rockchip/dts/rk3399/rk3399-r08.dts
 cp -f $GITHUB_WORKSPACE/configfiles/rk3399-tpm312.dts target/linux/rockchip/dts/rk3399/rk3399-tpm312.dts
-cp -f $GITHUB_WORKSPACE/configfiles/rk3399-xiaobao-nas-v1.dts target/linux/rockchip/dts/rk3399/rk3399-xiaobao-nas-v1.dts
 
 
 cp -f $GITHUB_WORKSPACE/configfiles/rk3399.dtsi target/linux/rockchip/armv8/files/arch/arm64/boot/dts/rockchip/rk3399.dtsi
 cp -f $GITHUB_WORKSPACE/configfiles/rk3399-opp.dtsi target/linux/rockchip/armv8/files/arch/arm64/boot/dts/rockchip/rk3399-opp.dtsi
 cp -f $GITHUB_WORKSPACE/configfiles/rk3399-r08.dts target/linux/rockchip/armv8/files/arch/arm64/boot/dts/rockchip/rk3399-r08.dts
 cp -f $GITHUB_WORKSPACE/configfiles/rk3399-tpm312.dts target/linux/rockchip/armv8/files/arch/arm64/boot/dts/rockchip/rk3399-tpm312.dts
-cp -f $GITHUB_WORKSPACE/configfiles/rk3399-xiaobao-nas-v1.dts target/linux/rockchip/armv8/files/arch/arm64/boot/dts/rockchip/rk3399-xiaobao-nas-v1.dts
 
 
 cp -f $GITHUB_WORKSPACE/configfiles/rk3399.dtsi package/boot/uboot-rockchip/src/arch/arm/dts/rk3399.dtsi
 cp -f $GITHUB_WORKSPACE/configfiles/rk3399-opp.dtsi package/boot/uboot-rockchip/src/arch/arm/dts/rk3399-opp.dtsi
 cp -f $GITHUB_WORKSPACE/configfiles/rk3399-r08.dts package/boot/uboot-rockchip/src/arch/arm/dts/rk3399-r08.dts
 cp -f $GITHUB_WORKSPACE/configfiles/rk3399-tpm312.dts package/boot/uboot-rockchip/src/arch/arm/dts/rk3399-tpm312.dts
-cp -f $GITHUB_WORKSPACE/configfiles/rk3399-xiaobao-nas-v1.dts package/boot/uboot-rockchip/src/arch/arm/dts/rk3399-xiaobao-nas-v1.dts
 
 
 
