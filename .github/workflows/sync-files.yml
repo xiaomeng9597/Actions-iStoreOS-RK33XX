@@ -27,6 +27,10 @@ jobs:
            sed -i "/CONFIG_TARGET_DEVICE_rockchip_.*=.*/d" ./rk33xx/.config
            sed -i "/CONFIG_PACKAGE_dtc.*=.*/d" ./rk33xx/.config
            sed -i "/CONFIG_PACKAGE_luci-app-istorex.*=.*/d" ./rk33xx/.config
+           # sed -i "s/CONFIG_PACKAGE_rtl8821ce-firmware=y/CONFIG_PACKAGE_rtl8821ce-firmware=n/" ./rk33xx/.config
+           sed -i "s/^\(CONFIG_PACKAGE_rtl[0-9a-z-]*firmware\)=y$/\1=n/" ./rk33xx/.config
+           sed -i "s/CONFIG_PACKAGE_kmod-rtw88-oot=y/CONFIG_PACKAGE_kmod-rtw88-oot=n/" ./rk33xx/.config
+           sed -i "s/CONFIG_PACKAGE_kmod-rtw89-oot=y/CONFIG_PACKAGE_kmod-rtw89-oot=n/" ./rk33xx/.config
            echo -e "\\n$configdata2" >> ./rk33xx/.config
            # 清除.config配置文件里面重复的配置项
            configdata3=$(cat ./rk33xx/.config)
