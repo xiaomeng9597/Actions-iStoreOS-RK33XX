@@ -712,7 +712,7 @@ GPIOs 128-159, platform/pinctrl, gpio4:
 };
 
 &usbdrd_dwc3_0 {
-	dr_mode = "otg";
+	dr_mode = "host";
 	status = "okay";
 };
 
