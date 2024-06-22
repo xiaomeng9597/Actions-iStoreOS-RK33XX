@@ -222,6 +222,16 @@ GPIOs 128-159, platform/pinctrl, gpio4:
 			default-state = "on";
 			label = "power_5v_run";
 		};
+		led_pwr: led-pwr {
+			gpios = <&gpio1 RK_PC7 GPIO_ACTIVE_HIGH>;
+			pinctrl-names = "default";
+			pinctrl-0 = <&led_pwr_enable_h>;
+			default-state = "on";
+			label = "led-pwr";
+			retain-state-suspended;
+			linux,default-trigger = "default-on";
+			status = "okay";
+		};
 	};
 
 	wesine-gpio {
@@ -855,6 +865,11 @@ GPIOs 128-159, platform/pinctrl, gpio4:
 			rockchip,pins =
 			    <3 RK_PC3 2 &pcfg_pull_up>,
 			    <3 RK_PC4 2 &pcfg_pull_none>;
+		};
+	};
+	leds {
+		led_pwr_enable_h: led-pwr-enable-h {
+			rockchip,pins = <1 RK_PC7 RK_FUNC_GPIO &pcfg_pull_up>;
 		};
 	};
 };
