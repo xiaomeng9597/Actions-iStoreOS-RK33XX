@@ -217,17 +217,12 @@ GPIOs 128-159, platform/pinctrl, gpio4:
 
 	leds {
 		compatible = "gpio-leds";
-		power5v-led {
-			gpios = <&gpio0 23 GPIO_ACTIVE_HIGH>;
-			default-state = "on";
-			label = "power_5v_run";
-		};
-		pwr_led: pwr-led {
+		pinctrl-names = "default";
+		pinctrl-0 = <&leds_pins>;
+		power_led: led-0 {
 			gpios = <&gpio1 RK_PC7 GPIO_ACTIVE_HIGH>;
-			pinctrl-names = "default";
-			pinctrl-0 = <&pwr_led_enable_h>;
+			label = "red:power";
 			default-state = "on";
-			label = "pwr-led";
 			retain-state-suspended;
 			linux,default-trigger = "default-on";
 			status = "okay";
@@ -868,7 +863,7 @@ GPIOs 128-159, platform/pinctrl, gpio4:
 		};
 	};
 	leds {
-		pwr_led_enable_h: pwr-led-enable-h {
+		leds_pins: leds-pins {
 			rockchip,pins = <1 RK_PC7 RK_FUNC_GPIO &pcfg_pull_up>;
 		};
 	};
