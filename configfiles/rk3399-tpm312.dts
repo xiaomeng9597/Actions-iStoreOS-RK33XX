@@ -141,6 +141,19 @@ GPIOs 128-159, platform/pinctrl, gpio4:
 		regulator-max-microvolt = <3300000>;
 	};
 
+	leds {
+		compatible = "gpio-leds";
+		pinctrl-names = "default";
+		pinctrl-0 = <&leds_pins>;
+		power_led: led-0 {
+			gpios = <&gpio1 RK_PC7 GPIO_ACTIVE_HIGH>;
+			label = "red:power";
+			default-state = "on";
+			linux,default-trigger = "default-on";
+			status = "okay";
+		};
+	};
+
 	vcc5v0_sys: vcc5v0-sys {
 		compatible = "regulator-fixed";
 		regulator-name = "vcc5v0_sys";
@@ -212,20 +225,6 @@ GPIOs 128-159, platform/pinctrl, gpio4:
 
 		simple-audio-card,codec {
 			sound-dai = <&hdmi>;
-		};
-	};
-
-	leds {
-		compatible = "gpio-leds";
-		pinctrl-names = "default";
-		pinctrl-0 = <&leds_pins>;
-		power_led: led-0 {
-			gpios = <&gpio1 RK_PC7 GPIO_ACTIVE_HIGH>;
-			label = "red:power";
-			default-state = "on";
-			retain-state-suspended;
-			linux,default-trigger = "default-on";
-			status = "okay";
 		};
 	};
 
