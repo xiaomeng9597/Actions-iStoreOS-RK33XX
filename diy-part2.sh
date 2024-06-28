@@ -113,6 +113,6 @@ cp -f $GITHUB_WORKSPACE/configfiles/rk3399-tpm312.dts package/boot/uboot-rockchi
 
 
 #集成CPU性能跑分脚本
-cp -a $GITHUB_WORKSPACE/configfiles/coremark/* package/base-files/files/sbin/
-chmod 755 package/base-files/files/sbin/coremark
-chmod 755 package/base-files/files/sbin/coremark.sh
+cp -a $GITHUB_WORKSPACE/configfiles/coremark/* package/base-files/files/bin/
+chmod 755 package/base-files/files/bin/coremark
+chmod 755 package/base-files/files/bin/coremark.sh
