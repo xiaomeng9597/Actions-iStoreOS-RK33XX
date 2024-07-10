@@ -228,7 +228,6 @@
 	phy-mode = "rgmii";
 	pinctrl-names = "default";
 	pinctrl-0 = <&rgmii_pins>;
-	pinctrl-1 = <&rgmii_sleep_pins>;
 	snps,reset-gpio = <&gpio3 RK_PB7 GPIO_ACTIVE_LOW>; // bsp
 	snps,reset-active-low;
 	snps,reset-delays-us = <0 10000 50000>;
@@ -630,12 +629,6 @@
 		};
 	};
 
-	gmac {
-		rgmii_sleep_pins: rgmii-sleep-pins {
-			rockchip,pins = <3 RK_PB7 RK_FUNC_GPIO &pcfg_output_low>; // bsp
-		};
-	};
-
 	ir {
 		ir_int: ir-int {
 			rockchip,pins = <0 RK_PA6 RK_FUNC_GPIO &pcfg_pull_none>;
@@ -802,13 +795,13 @@
 	status = "okay";
 };
 
-&usbdrd3_1 {
-	status = "okay";
-};
-
 &usbdrd_dwc3_0 {
 	status = "okay";
 	dr_mode = "host";
+};
+
+&usbdrd3_1 {
+	status = "okay";
 };
 
 &usbdrd_dwc3_1 {
