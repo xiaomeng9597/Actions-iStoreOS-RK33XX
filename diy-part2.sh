@@ -39,7 +39,6 @@ echo -e "\\ndefine Device/rk3399_r08
   DEVICE_MODEL := R08
   SOC := rk3399
   SUPPORTED_DEVICES := rk3399,r08
-  DEVICE_DTS := rk3399-r08
   UBOOT_DEVICE_NAME := r08-rk3399
   IMAGE/sysupgrade.img.gz := boot-common | boot-script | pine64-img | gzip | append-metadata
 endef
@@ -51,7 +50,6 @@ echo -e "\\ndefine Device/rk3399_tpm312
   DEVICE_MODEL := TPM312
   SOC := rk3399
   SUPPORTED_DEVICES := rk3399,tpm312
-  DEVICE_DTS := rk3399-tpm312
   UBOOT_DEVICE_NAME := tpm312-rk3399
   IMAGE/sysupgrade.img.gz := boot-common | boot-script | pine64-img | gzip | append-metadata
 endef
@@ -85,15 +83,7 @@ cp -f $GITHUB_WORKSPACE/configfiles/u-boot.mk include/u-boot.mk
 
 
 
-# 创建rk3399 dts设备树文件夹
-mkdir -p target/linux/rockchip/dts/rk3399
-
-cp -f $GITHUB_WORKSPACE/configfiles/rk3399.dtsi target/linux/rockchip/dts/rk3399/rk3399.dtsi
-cp -f $GITHUB_WORKSPACE/configfiles/rk3399-opp.dtsi target/linux/rockchip/dts/rk3399/rk3399-opp.dtsi
-cp -f $GITHUB_WORKSPACE/configfiles/rk3399-r08.dts target/linux/rockchip/dts/rk3399/rk3399-r08.dts
-cp -f $GITHUB_WORKSPACE/configfiles/rk3399-tpm312.dts target/linux/rockchip/dts/rk3399/rk3399-tpm312.dts
-
-
+# 复制对应的dts设备树文件到指定目录里面
 cp -f $GITHUB_WORKSPACE/configfiles/rk3399.dtsi target/linux/rockchip/armv8/files/arch/arm64/boot/dts/rockchip/rk3399.dtsi
 cp -f $GITHUB_WORKSPACE/configfiles/rk3399-opp.dtsi target/linux/rockchip/armv8/files/arch/arm64/boot/dts/rockchip/rk3399-opp.dtsi
 cp -f $GITHUB_WORKSPACE/configfiles/rk3399-r08.dts target/linux/rockchip/armv8/files/arch/arm64/boot/dts/rockchip/rk3399-r08.dts
