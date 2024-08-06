@@ -252,6 +252,7 @@
 &gpu {
 	status = "okay";
 	mali-supply = <&vdd_gpu>;
+	ower-off-delay-ms = <0xc8>;
 };
 
 &i2c0 {
@@ -713,4 +714,39 @@
 &usbdrd_dwc3_1 {
 	dr_mode = "host";
 	status = "okay";
+};
+
+&vopl {
+    status = "okay";
+    rockchip,grf = <&grf>;
+};
+&vopb {
+    status = "okay";
+    rockchip,grf = <&grf>;
+};
+&vopl_mmu {
+    status = "okay";
+    interrupt-names = "vopl_mmu";
+};
+&vopb_mmu {
+    status = "okay";
+    interrupt-names = "vopb_mmu";
+};
+
+&hdmi {
+    status = "okay";
+    pinctrl-names = "default";
+    power-domains = <&power 0x15>;
+	pinctrl-0 = <&hdmi_i2c_xfer>;
+    ddc-i2c-scl-high-time-ns = <9625>;
+    ddc-i2c-scl-low-time-ns = <10000>;
+};
+&hdmi_sound {
+    status = "okay";
+};
+&hdmi_in_vopb {
+    status = "okay";
+};
+&hdmi_in_vopl {
+    status="disabled";
 };
