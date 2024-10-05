@@ -729,7 +729,6 @@
 
 &io_domains {
 	status = "okay";
-
 	bt656-supply = <&vcc1v8_dvp>;
 	audio-supply = <&vcca1v8_codec>;
 	sdmmc-supply = <&vcc3v0_sd>;
@@ -896,7 +895,7 @@
 	cap-mmc-highspeed;
 	cap-sd-highspeed;
 	disable-wp;
-	vqmmc-supply = <&vcc_sd>;
+	vqmmc-supply = <&vcc3v0_sd>;
 	pinctrl-names = "default";
 	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_cd &sdmmc_bus4>;
 	card-detect-delay = <800>;
