@@ -715,8 +715,6 @@
 	rockchip,capture-channels = <2>;
 	status = "okay";
 	pinctrl-0 = <&i2s0_2ch_bus>;
-	pinctrl-1 = <&i2s0_2ch_bus_bclk_off>;
-
 
 	i2s0_p0: port {
 		i2s0_p0_0: endpoint {
