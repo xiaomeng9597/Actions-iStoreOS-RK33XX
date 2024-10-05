@@ -19,19 +19,7 @@
 	};
 
 	chosen {
-		bootargs = "earlycon=uart8250,mmio32,0xff1a0000 swiotlb=1 coherent_pool=1m";
 		stdout-path = "serial2:1500000n8";
-	};
-
-	fiq_debugger: fiq-debugger {
-		compatible = "rockchip,fiq-debugger";
-		rockchip,serial-id = <2>;
-		rockchip,wake-irq = <0>;
-		rockchip,irq-mode-enable = <0>;  /* If enable uart uses irq instead of fiq */
-		rockchip,baudrate = <1500000>;  /* Only 115200 and 1500000 */
-		pinctrl-names = "default";
-		pinctrl-0 = <&uart2c_xfer>;
-		interrupts = <GIC_SPI 150 IRQ_TYPE_LEVEL_HIGH 0>;
 	};
 
 	clkin_gmac: external-gmac-clock {
