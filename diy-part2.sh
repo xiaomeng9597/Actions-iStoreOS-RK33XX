@@ -17,7 +17,7 @@ cp -f $GITHUB_WORKSPACE/configfiles/ubus_Makefile package/system/ubus/Makefile
 sed -i "s/push @mirrors, 'https:\/\/mirror2.openwrt.org\/sources';/&\\npush @mirrors, 'https:\/\/github.com\/xiaomeng9597\/files\/releases\/download\/iStoreosFile';/g" scripts/download.pl
 
 
-#修改uhttpd配置文件，启用nginx
+# 修改uhttpd配置文件，启用nginx
 # sed -i "/.*uhttpd.*/d" .config
 # sed -i '/.*\/etc\/init.d.*/d' package/network/services/uhttpd/Makefile
 # sed -i '/.*.\/files\/uhttpd.init.*/d' package/network/services/uhttpd/Makefile
@@ -99,13 +99,16 @@ cp -f $GITHUB_WORKSPACE/configfiles/rk3399-tpm312.dts package/boot/uboot-rockchi
 
 
 
-#不开启无线功能，已移除Realtek相关无线驱动，这个暂时不可用，原因兼容性不好，会异常掉线
+# 不开启无线功能，已移除Realtek相关无线驱动，这个暂时不可用，原因兼容性不好，会异常掉线
 # cp -f $GITHUB_WORKSPACE/configfiles/opwifi package/base-files/files/etc/init.d/opwifi
 # chmod 755 package/base-files/files/etc/init.d/opwifi
 # sed -i "s/wireless.radio\${devidx}.disabled=1/wireless.radio\${devidx}.disabled=0/g" package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 
-#集成CPU性能跑分脚本
+# 集成CPU性能跑分脚本
 cp -a $GITHUB_WORKSPACE/configfiles/coremark/* package/base-files/files/bin/
 chmod 755 package/base-files/files/bin/coremark
 chmod 755 package/base-files/files/bin/coremark.sh
+
+# 定时限速插件
+git clone --depth=1 https://github.com/sirpdboy/luci-app-eqosplus package/luci-app-eqosplus
